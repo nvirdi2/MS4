@@ -11,22 +11,26 @@
 
 namespace sdds 
 {
-   Ticket::Ticket(int NUM) {
+   Ticket::Ticket(int NUM) 
+   {
       num = NUM;
    }
 
 
 
-   void Ticket::resetTime() {
+   void Ticket::resetTime() 
+   {
       time.setToNow();
    }
 
 
 
-   std::istream& Ticket::read(std::istream& is) {
+   std::istream& Ticket::read(std::istream& is) 
+   {
          return csvRead(is);
    }
-   std::istream& Ticket::csvRead(std::istream& is) {
+   std::istream& Ticket::csvRead(std::istream& is) 
+   {
       is >> num;
       is.ignore();
          return is >> time;
@@ -34,23 +38,26 @@ namespace sdds
 
 
 
-   std::ostream& Ticket::write(std::ostream& os) const {
+   std::ostream& Ticket::write(std::ostream& os) const 
+   {
          return os << "Ticket No: " << num << ", Issued at: " << time ;
    }
-   std::ostream& Ticket::csvWrite(std::ostream& os) const {
+   std::ostream& Ticket::csvWrite(std::ostream& os) const 
+   {
          return os << num << "," << time;
    }
 
 
 
-   Ticket::operator Time() const {
+   Ticket::operator Time() const 
+   {
          return time;
    }
 
 
 
-   int Ticket::number() const {
+   int Ticket::number() const 
+   {
          return num;
    }
-
 }
