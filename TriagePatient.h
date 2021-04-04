@@ -18,8 +18,8 @@ namespace sdds
         char* symptoms;
 
     public:
+       ~TriagePatient();
         TriagePatient();
-        ~TriagePatient();
 
         char type() const;
 
