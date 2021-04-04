@@ -10,8 +10,10 @@
 
 #include <iostream>
 
-namespace sdds {
-    class IOAble {
+namespace sdds 
+{
+    class IOAble 
+    {
     public:
         virtual std::istream& csvRead(std::istream&) = 0;
         virtual std::ostream& csvWrite(std::ostream&) const = 0;
