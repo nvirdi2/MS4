@@ -79,7 +79,6 @@ namespace sdds
             return istr;
         }
 
-
         m_minutes = Hours * 60 + Minutes;
         return istr;
     }
