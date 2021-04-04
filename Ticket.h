@@ -13,7 +13,8 @@
 
 namespace sdds 
 {
-   class Ticket:public IOAble {
+   class Ticket:public IOAble 
+   {
       Time time;
       int num;
    public:
