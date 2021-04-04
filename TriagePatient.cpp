@@ -77,17 +77,20 @@ namespace sdds
         Patient::csvWrite(os);
             return os << ',' << symptoms;
     }
-
-    int T_Ticket = 1;
+    
 
     TriagePatient::TriagePatient() :Patient(T_Ticket) 
     {
+        int T_Ticket = 1;
         symptoms = nullptr;
             T_Ticket++;
     }
 
-    std::istream& TriagePatient::csvRead(std::istream& is) {
+    std::istream& TriagePatient::csvRead(std::istream& is) 
+    {
 
+        int T_Ticket = 1;
+        
         delete[] symptoms;
 
         Patient::csvRead(is);
