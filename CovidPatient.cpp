@@ -38,17 +38,15 @@ namespace sdds
         } return os;
     }
     
-
+    int C_Ticket = 1;
+    
     CovidPatient::CovidPatient() :Patient(C_Ticket) 
     {
-        int C_Ticket = 1;
             C_Ticket++;
     }
 
     std::istream& CovidPatient::csvRead(std::istream& is) 
-    {
-        int C_Ticket = 1;
-        
+    {      
         Patient::csvRead(is);
         C_Ticket = Patient::number() + 1;
             return is;
