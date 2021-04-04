@@ -15,36 +15,44 @@
 
 namespace sdds 
 {
-    Patient::Patient(int NUM, bool check):object(NUM) {
+    Patient::Patient(int NUM, bool check):object(NUM) 
+    {
         flag = check;
     }
-    Patient::~Patient() {
+    Patient::~Patient() 
+    {
         delete[] m_name;
     }
 
 
 
-    void Patient::fileIO(bool check) {
+    void Patient::fileIO(bool check) 
+    {
         flag = check;
     }
-    void Patient::setArrivalTime() {
+    void Patient::setArrivalTime() 
+    {
         object.resetTime();
     }
 
 
-    bool Patient::operator ==(char x) const {
+    bool Patient::operator ==(char x) const 
+    {
             return x == type();
     }
-    bool Patient::operator ==(const Patient& any) const {
+    bool Patient::operator ==(const Patient& any) const 
+    {
             return type() == any.type();
     }
-    bool Patient::fileIO() const {
+    bool Patient::fileIO() const 
+    {
             return flag;
     }
 
 
 
-    std::istream& Patient::read(std::istream& is) {
+    std::istream& Patient::read(std::istream& is) 
+    {
         int lenght;
 
         std::cout << "Name: ";
@@ -64,7 +72,8 @@ namespace sdds
         
             return is;
     }
-    std::istream& Patient::csvRead(std::istream& is) {
+    std::istream& Patient::csvRead(std::istream& is) 
+    {
         int lenght;
 
         std::string name;
@@ -103,7 +112,8 @@ namespace sdds
 
             return os;
     }
-    std::ostream& Patient::csvWrite(std::ostream& os) const {
+    std::ostream& Patient::csvWrite(std::ostream& os) const 
+    {
         os << type() << ',';
         os <<m_name << ',';
         os << o_num << ',';
@@ -113,13 +123,15 @@ namespace sdds
 
 
 
-    int Patient::number() const {
+    int Patient::number() const 
+    {
             return object.number();
     }
 
 
 
-    Patient::operator Time() const {
+    Patient::operator Time() const 
+    {
             return Time(object);
     }
 }
