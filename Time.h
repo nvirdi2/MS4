@@ -38,4 +38,4 @@ namespace sdds
    std::istream &operator>>(std::istream &istr, Time &D);
 }
 
-#endif // !SDDS_TIME_H
+#endif //!SDDS_TIME_H
