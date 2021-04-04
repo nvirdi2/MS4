@@ -17,24 +17,10 @@ namespace sdds
     {
         return 'C';
     }
-
-    int C_Ticket = 1;
-
-    CovidPatient::CovidPatient() :Patient(C_Ticket) 
-    {
-        C_Ticket++;
-    }
-
+    
     std::istream& CovidPatient::read(std::istream& is) 
     {
         return fileIO() ? csvRead(is) : Patient::read(is);
-    }
-
-    std::istream& CovidPatient::csvRead(std::istream& is) 
-    {
-        Patient::csvRead(is);
-        C_Ticket = Patient::number() + 1;
-            return is;
     }
 
     std::ostream& CovidPatient::write(std::ostream& os) const 
@@ -51,4 +37,19 @@ namespace sdds
             csvWrite(os);
         } return os;
     }
+    
+    int C_Ticket = 1;
+
+    CovidPatient::CovidPatient() :Patient(C_Ticket) 
+    {
+        C_Ticket++;
+    }
+
+    std::istream& CovidPatient::csvRead(std::istream& is) 
+    {
+        Patient::csvRead(is);
+        C_Ticket = Patient::number() + 1;
+            return is;
+    }
+
 }
