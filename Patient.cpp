@@ -67,7 +67,7 @@ namespace sdds
 
         m_name[lenght] = '\0';
 
-        std::cout << "OHIP:";
+        std::cout << "OHIP: ";
         o_num = getInt(100000000, 999999999, nullptr, "Invalid OHIP Number, ");
         
             return is;
