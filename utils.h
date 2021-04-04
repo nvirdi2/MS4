@@ -21,4 +21,4 @@ namespace sdds
    
    int getTime();
 }
-#endif // !SDDS_UTILS_H_
+#endif //!SDDS_UTILS_H_
